@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Happy Birthday, My Love</title>
+  <title>Happy Birthday, Jana</title>
   <style>
     /* Basic Reset */
     * {
@@ -11,17 +11,19 @@
       box-sizing: border-box;
     }
 
+    /* Use a high-contrast, greyscale color scheme */
     body {
       font-family: Arial, sans-serif;
-      background: #ffefe6; /* Soft background color */
-      color: #333;
+      background: #000; /* Black background */
+      color: #fff;      /* White text for contrast */
       display: flex;
       flex-direction: column;
       min-height: 100vh;
     }
 
-    header {
-      background: #ffd1dc;
+    header,
+    footer {
+      background: #444; /* Dark grey to distinguish from black */
       padding: 20px;
       text-align: center;
     }
@@ -33,7 +35,7 @@
 
     .subheading {
       font-size: 1.2em;
-      color: #a33;
+      color: #ccc; /* Lighter grey for subtext */
     }
 
     main {
@@ -47,9 +49,9 @@
 
     .content {
       max-width: 800px;
-      background: #fff;
+      background: #111; /* Slightly lighter than black for contrast */
       border-radius: 8px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(255,255,255,0.1);
       padding: 30px;
       position: relative;
     }
@@ -60,14 +62,14 @@
     }
 
     .content p {
-      font-size: 1.1em;
+      font-size: 1.2em;
       line-height: 1.6;
       margin-bottom: 20px;
     }
 
-    /* A simple "heartbeat" animation for the heart icon */
+    /* Heartbeat animation for the heart icon */
     .heart {
-      color: #e60073;
+      color: #eee; /* Light grey */
       font-size: 2em;
       animation: heartbeat 1.5s infinite;
     }
@@ -80,57 +82,38 @@
       100% { transform: scale(1); }
     }
 
-    /* Optional: A small, subtle confetti background effect. 
-       You can remove or replace the images as you like. */
-    .confetti {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      pointer-events: none; /* Doesn’t block text below */
-      background-image: url('https://cdn.jsdelivr.net/gh/hmongouachon/animated-svg-cursor@master/assets/emoji_confetti/confetti.gif');
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      opacity: 0.3; /* Transparent effect */
-      z-index: -1; /* Place behind the content */
-    }
-
     footer {
       text-align: center;
       padding: 10px;
-      background: #ffd1dc;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Happy Birthday, [Her Name]</h1>
-    <div class="subheading">Another year more beautiful, inside and out!</div>
+    <h1>Happy Birthday, Jana</h1>
+    <div class="subheading">Another year of warmth, joy, and love!</div>
   </header>
 
   <main>
     <div class="content">
-      <div class="confetti"></div>
       <h2>
         For the Love of My Life <span class="heart">&hearts;</span>
       </h2>
       <p>
-        My dearest [Her Name],<br><br>
-        Today we celebrate you: your laugh, your kindness, your warmth, 
-        and everything that makes you so special. I feel incredibly lucky 
-        to have you in my life, and I cherish every memory we’ve created 
-        together this past year.
+        My dearest Jana,<br><br>
+        Today is all about you: your laughter, your kindness, and the countless
+        ways you make life brighter. I am forever grateful to share these precious
+        moments with you.
       </p>
       <p>
-        You inspire me every day with your passion, your strength, and your 
-        endless capacity for love. Thank you for filling my world with 
-        laughter and happiness. 
+        Your spirit and resilience inspire me every day. You bring so much warmth
+        and joy to everyone around you, and I admire your strength and compassion. 
       </p>
       <p>
-        I hope this birthday is the start of your best year yet. May it 
-        bring you new adventures, success in all you do, and countless 
-        moments that make you smile. You deserve it all!
+        May this birthday and the year ahead be filled with new discoveries,
+        wonderful adventures, and endless happiness — all of which you so
+        deeply deserve.
       </p>
       <p>
         With all my love,<br>
@@ -140,7 +123,7 @@
   </main>
 
   <footer>
-    <small>&copy; 2025 Created with love for [Her Name]’s Birthday</small>
+    <small>&copy; 2025 Created with love for Jana’s Birthday</small>
   </footer>
   
 </body>
