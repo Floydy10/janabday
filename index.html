@@ -29,6 +29,22 @@
       text-align: center;
     }
 
+    /* Wrapper to place the heading and image side by side */
+    .title-section {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center; /* Keeps everything centered horizontally */
+      gap: 15px; /* Space between the image (icon) and heading */
+    }
+
+    /* Icon in the title if desired */
+    .title-section img.icon {
+      width: 60px; 
+      height: auto;
+      border: 2px solid #444;
+      border-radius: 4px;
+    }
+
     header h1 {
       font-size: 3em; /* Increased header font size */
       margin-bottom: 10px;
@@ -83,25 +99,76 @@
       100% { transform: scale(1); }
     }
 
-    /* Ensure images resize on smaller screens */
-    img {
+    /* Ensure images in the content are responsive */
+    .content img {
       max-width: 100%;
       height: auto;
-      margin: 20px 0;
       border: 2px solid #444;
       border-radius: 4px;
+      margin-top: 20px;
+      margin-bottom: 20px;
     }
 
     footer {
       text-align: center;
       padding: 10px;
     }
+
+    /* Gift Section Styling */
+    .gift-section {
+      margin-top: 40px;
+    }
+    .gift-section h3 {
+      font-size: 1.8em;
+      margin-bottom: 20px;
+    }
+    .gift-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* The clickable "gift" done with an emoji, not an image */
+    #giftBox {
+      cursor: pointer;
+      font-size: 3em;  /* Make the emoji large enough to see clearly */
+      border: 2px solid #444;
+      border-radius: 4px;
+      padding: 10px 20px;
+    }
+
+    /* Hidden coupon by default */
+    #coupon {
+      display: none;
+      margin-top: 20px;
+      background: #222;
+      padding: 20px;
+      border-radius: 6px;
+      border: 2px solid #444;
+      text-align: center;
+    }
+    #coupon h4 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Happy Birthday, Jana</h1>
+    <!-- Title (you can remove the img.icon if you don't want it) -->
+    <div class="title-section">
+      <!-- Example icon next to "Happy Birthday," if you have one. 
+           Or remove entirely if not needed. -->
+      <!--
+      <img
+        class="icon"
+        src="https://github.com/Floydy10/janabday/blob/main/482601022_2046294819179142_540069786863663156_n.jpg?raw=true"
+        alt="Small photo icon of Jana"
+      />
+      -->
+      <h1>Happy Birthday, Jana</h1>
+    </div>
     <div class="subheading">Another year of warmth, joy, and love!</div>
   </header>
 
@@ -110,12 +177,10 @@
       <h2>
         For the Love of My Life <span class="heart">&hearts;</span>
       </h2>
-      
-      <!-- Here is an example of how to include an image. 
-           After you have hosted your photo, replace the src value with the direct link. 
-           The alt attribute is important for screen readers. -->
-      <img 
-        src="https://YOUR-GITHUB-PAGES-URL.com/path-to-your-image.jpg" 
+
+      <!-- Example main photo; omit if not wanted -->
+      <img
+        src="https://github.com/Floydy10/janabday/blob/main/484206543_541261011752218_315951097577610807_n.jpg?raw=true" 
         alt="A memorable photo of Fletcher and Jana" 
       />
 
@@ -127,7 +192,7 @@
       </p>
       <p>
         Your spirit and resilience inspire me every day. You bring so much warmth
-        and joy to everyone around you, and I admire your strength and compassion. 
+        and joy to everyone around you, and I admire your strength and compassion.
       </p>
       <p>
         May this birthday and the year ahead be filled with new discoveries,
@@ -138,6 +203,27 @@
         With all my love,<br>
         Fletcher
       </p>
+
+      <!-- GIFT SECTION: No images, just emoji to simulate opening a gift -->
+      <section class="gift-section">
+        <h3>Open Your Gift!</h3>
+        <div class="gift-container">
+          <!-- The "closed" gift is 🎁. When clicked, it changes to 🎉 (open). -->
+          <span 
+            id="giftBox" 
+            aria-label="Gift box (click to open)" 
+            onclick="openGift()"
+          >
+            🎁
+          </span>
+
+          <!-- Hidden coupon that appears after gift is opened -->
+          <div id="coupon">
+            <h4>Coupon to Learn Greek</h4>
+            <p>Use code <strong>OPA!</strong> for a free introductory Greek lesson!</p>
+          </div>
+        </div>
+      </section>
     </div>
   </main>
 
@@ -145,6 +231,19 @@
     <small>&copy; 2025 Created with love for Jana’s Birthday</small>
   </footer>
   
+  <script>
+    function openGift() {
+      const giftBox = document.getElementById('giftBox');
+      const coupon = document.getElementById('coupon');
+
+      // If the gift is still the "🎁" (closed), switch to "🎉" (open) & reveal coupon
+      if (giftBox.textContent.trim() === "🎁") {
+        giftBox.textContent = "🎉";
+        coupon.style.display = "block";
+      }
+      // If you want it to toggle back to 🎁, you could add an 'else' here
+      // but that’s optional – this setup opens once and stays open.
+    }
+  </script>
 </body>
 </html>
-
